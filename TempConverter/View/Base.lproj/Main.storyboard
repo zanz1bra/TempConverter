@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BTY-Z5-rky">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Temperature-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TempConverter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="istockphoto-1023016842-612x612" translatesAutoresizingMaskIntoConstraints="NO" id="Riw-j6-3ob">
+                                <rect key="frame" x="0.0" y="-39" width="375" height="740"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.0" maxValue="1" minimumValueImage="sun.min" catalog="system" maximumValueImage="sun.max.fill" translatesAutoresizingMaskIntoConstraints="NO" id="zRm-eU-lyC">
+                                <rect key="frame" x="35" y="319" width="305" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.36561054559510719" green="0.39542850843589461" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="maximumTrackTintColor" red="1" green="0.39009718325341081" blue="0.36400918717692821" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="thumbTintColor" systemColor="systemTealColor"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="z6c-fS-cSc"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp Converter from ºC to ºF/ºK" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpF-0e-6a1">
+                                <rect key="frame" x="69.5" y="73" width="236" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="4bd-hm-aWV"/>
+                                    <constraint firstAttribute="height" constant="94" id="p15-Fs-ZZk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 ºC" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKn-8q-KxY">
+                                <rect key="frame" x="69.5" y="193" width="236" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="Bnl-TV-gHC"/>
+                                    <constraint firstAttribute="width" constant="236" id="DN4-Ny-VcW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 ºF" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnU-nw-wdL">
+                                <rect key="frame" x="69.5" y="369" width="236" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="adt-Ry-mUh"/>
+                                    <constraint firstAttribute="width" constant="236" id="r84-Sw-SfS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="laM-oQ-E9d">
+                                <rect key="frame" x="37" y="557" width="301" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DyJ-pU-ttO"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="JDl-0T-5IA"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Fahrenheit"/>
+                                    <segment title="Kelvin"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SpF-0e-6a1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="9" id="9Ow-Pc-9HI"/>
+                            <constraint firstItem="sKn-8q-KxY" firstAttribute="top" secondItem="SpF-0e-6a1" secondAttribute="bottom" constant="26" id="DAb-Rf-wUr"/>
+                            <constraint firstItem="xnU-nw-wdL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="KEu-a5-hH5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Riw-j6-3ob" secondAttribute="trailing" id="Ki2-Ts-8jh"/>
+                            <constraint firstItem="Riw-j6-3ob" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-103" id="NOu-0d-iWP"/>
+                            <constraint firstItem="zRm-eU-lyC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="Q46-CA-9VC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Riw-j6-3ob" secondAttribute="bottom" constant="-34" id="RPR-Be-vdn"/>
+                            <constraint firstItem="Riw-j6-3ob" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ut7-79-RYl"/>
+                            <constraint firstItem="zRm-eU-lyC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="V4u-SM-Rbd"/>
+                            <constraint firstItem="laM-oQ-E9d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="dHc-rQ-7wY"/>
+                            <constraint firstItem="SpF-0e-6a1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hvq-rH-qy6"/>
+                            <constraint firstItem="xnU-nw-wdL" firstAttribute="top" secondItem="zRm-eU-lyC" secondAttribute="bottom" constant="20" id="m07-gW-JXu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="laM-oQ-E9d" secondAttribute="bottom" constant="80" id="nwG-tW-wA3"/>
+                            <constraint firstItem="sKn-8q-KxY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rTL-2Y-fFs"/>
+                            <constraint firstItem="zRm-eU-lyC" firstAttribute="top" secondItem="sKn-8q-KxY" secondAttribute="bottom" constant="32" id="rYw-Vy-8nl"/>
+                            <constraint firstItem="laM-oQ-E9d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vCT-7e-w0t"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Temperature" id="4f1-1u-I37">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="sun.max.circle.fill" catalog="system" id="VXt-Vz-MuK">
+                            <color key="tintColor" systemColor="labelColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="sKn-8q-KxY" id="NxX-rG-XE2"/>
+                        <outlet property="convertedTempLabel" destination="xnU-nw-wdL" id="6cw-8T-afT"/>
+                        <outlet property="tempSegmentControl" destination="laM-oQ-E9d" id="JDi-i9-7Ob"/>
+                        <outlet property="tempSlider" destination="zRm-eU-lyC" id="iOL-vK-aZC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1075.8139534883721" y="-3.218884120171674"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jPS-Yi-FPz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BTY-Z5-rky" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wUz-Qg-PtU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rUY-hr-0mp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iX2-9e-niy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="314" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="istockphoto-1023016842-612x612" width="344" height="612"/>
+        <image name="sun.max.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="sun.max.fill" catalog="system" width="128" height="125"/>
+        <image name="sun.min" catalog="system" width="128" height="123"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
