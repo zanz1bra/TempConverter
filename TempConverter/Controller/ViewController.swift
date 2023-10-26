@@ -23,27 +23,40 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         convertedTempLabel.text = "32 ºF"
     }
     
     
-    @IBAction func sliderValueChanged(_ sender: Any) {
+    @IBAction func changeSegment(_ sender: UISegmentedControl) {
+
+    }
+    
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        celsiusLabel.text = "\(Int(sender.value)) ºC"
+        changeSegment(tempSegmentControl)
         updateTempLabelFromSlider(value: tempSlider.value)
     }
     
     func updateTempLabelFromSlider(value: Float) {
         print("tempSlider:::", Int(value))
-        #warning("Logic together with segment controller. Check which segment controller is on, and make calculation, based on fahrenheit/kelvin logic")
-    }
-
-    func convertTempFrom(celsius: Int) -> (fahrenheit: Double, kelvin: Double) {
         
-        return (0, 0)
+        let celsiusTemp = Int(tempSlider.value)
+        
+        switch tempSegmentControl.selectedSegmentIndex {
+        case 0:
+            let fahrenheitTemp = (celsiusTemp * 9 / 5) + 32
+            convertedTempLabel.text = "\(fahrenheitTemp) ºF"
+        case 1:
+            let kelvinTemp = celsiusTemp + 273
+            convertedTempLabel.text = "\(kelvinTemp) ºK"
+        default:
+            break
+        }
+        
+//        #warning("Logic together with segment controller. Check which segment controller is on, and make calculation, based on fahrenheit/kelvin logic")
     }
     
     #warning("Pass result to InfoVC without segue")

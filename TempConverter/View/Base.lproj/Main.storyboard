@@ -68,6 +68,9 @@
                                     <segment title="Fahrenheit"/>
                                     <segment title="Kelvin"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="9S9-Wd-pmE"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -94,6 +97,9 @@
                     <navigationItem key="navigationItem" title="Temperature" id="4f1-1u-I37">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="sun.max.circle.fill" catalog="system" id="VXt-Vz-MuK">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <segue destination="74L-MX-Z2s" kind="presentation" id="Qfv-Z2-xOA"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -106,6 +112,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1075.8139534883721" y="-3.218884120171674"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aFY-G9-Vhd">
+            <objects>
+                <viewController id="74L-MX-Z2s" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0xq-fj-l0d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="istockphoto-1023016842-612x612" translatesAutoresizingMaskIntoConstraints="NO" id="cR4-9v-vhU">
+                                <rect key="frame" x="0.0" y="-72" width="375" height="764"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="122" translatesAutoresizingMaskIntoConstraints="NO" id="MfD-0z-iTW">
+                                <rect key="frame" x="86" y="235" width="203" height="177"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your temperature is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1a-RF-Zgf">
+                                        <rect key="frame" x="0.0" y="0.0" width="203" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pass temp here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXZ-U1-FQB">
+                                        <rect key="frame" x="0.0" y="149.5" width="203" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gdw-Gs-wZA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cR4-9v-vhU" firstAttribute="top" secondItem="Gdw-Gs-wZA" secondAttribute="top" constant="-72" id="JI5-YE-0yO"/>
+                            <constraint firstItem="MfD-0z-iTW" firstAttribute="centerX" secondItem="0xq-fj-l0d" secondAttribute="centerX" id="dO7-ut-oNa"/>
+                            <constraint firstItem="MfD-0z-iTW" firstAttribute="centerY" secondItem="0xq-fj-l0d" secondAttribute="centerY" id="jfe-pe-7d3"/>
+                            <constraint firstItem="Gdw-Gs-wZA" firstAttribute="trailing" secondItem="cR4-9v-vhU" secondAttribute="trailing" id="spL-b6-Swm"/>
+                            <constraint firstItem="cR4-9v-vhU" firstAttribute="leading" secondItem="Gdw-Gs-wZA" secondAttribute="leading" id="vXK-pa-izZ"/>
+                            <constraint firstItem="Gdw-Gs-wZA" firstAttribute="bottom" secondItem="cR4-9v-vhU" secondAttribute="bottom" constant="-45" id="vhs-Ah-kgn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VSO-te-cPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1854.1984732824426" y="-2.1126760563380285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jPS-Yi-FPz">
